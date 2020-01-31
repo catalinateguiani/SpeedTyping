@@ -12,9 +12,27 @@ function getRandomQuote() {
 async function getNextQuote() {
   const quote = await getRandomQuote();
   // quoteDisplayElement.innerText = "";
-  quoteDisplayElement.innerText = quote;
-
+  quoteDisplayElement.innerHTML = "";
+  quote.split("").forEach(character => {
+    const characterSpan = document.createElement("span");
+    characterSpan.innerText = character;
+    quoteDisplayElement.appendChild(characterSpan);
+  });
   quoteInputElement.value = null;
+  startTimer();
+}
+
+let startTime;
+function startTimer() {
+  timerElement.innerText = 0;
+  startTime = new Date();
+  setInterval(() => {
+    timerElement.innerText = getTimerTime();
+  }, 1000);
+}
+
+function getTimerTime() {
+  return Math.floor((new Date() - startTime) / 1000);
 }
 
 getNextQuote();
