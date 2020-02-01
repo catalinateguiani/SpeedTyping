@@ -6,9 +6,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
   margin: 0;
-  background-color: #1e0555;
+  /* background-color: #1e0555; */
 }
 
 body,
@@ -17,7 +17,7 @@ body,
 }
 
 .container {
-  background-color: #f0db4f;
+  /* background-color: #f0db4f; */
   padding: 1rem;
   border-radius: 0.5rem;
   width: 700px;
@@ -49,6 +49,7 @@ body,
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 5px 10px 8px darkslategrey;
 }
 
 .quote-input:focus {
